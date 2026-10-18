@@ -1,0 +1,24 @@
+# Copy to config.local.yaml to override (git-ignored).
+
+capture:
+  # Region of the exchange panel in screen pixels (all monitors stitched, as Spectacle
+  # captures them). Set with the "Calibrate capture" button; saved to config.local.yaml.
+  region: null
+
+ocr:
+  min_confidence: 60        # percent; lower readings are flagged and not stored
+  tessdata_dir: null        # set if tesseract can't find its English data (TESSDATA_PREFIX)
+
+ninja:
+  league: null              # last selected league (set by the league drop-down)
+  top_n: 20                 # items listed by "Check trade volume" (the last used value is kept in config.local.yaml)
+  max_age_hours: 12
+  cache_dir: data/ninja
+  user_agent: "poearb-personal-research"
+
+scan:
+  capture_dir: data/captures
+  keep_captures: 50
+
+storage:
+  db_path: data/poearb.sqlite

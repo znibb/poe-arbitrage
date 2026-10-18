@@ -1,0 +1,116 @@
+# Read by eye from the screenshots. give = "I Have", want = "I Want".
+# market_ratio is want:have as shown under "Market Ratio" (true price);
+# the 1:1 style value in the middle is the integer-rounded rate actually applied.
+d_to_ex:      {want_cur: Exalted Orb,               want_qty: 1,  give_cur: Divine Orb,  give_qty: 1, market_ratio: "452:1",  gold_fee: 120}
+ex_to_aug:    {want_cur: Orb of Augmentation,       want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "3:1",    gold_fee: 20}
+ex_to_c:      {want_cur: Chaos Orb,                 want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:60",   gold_fee: 160}
+ex_to_gaug:   {want_cur: Greater Orb of Augmentation, want_qty: 1, give_cur: Exalted Orb, give_qty: 1, market_ratio: "1.50:1", gold_fee: 60}
+ex_to_gc:     {want_cur: Greater Chaos Orb,         want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:129",  gold_fee: 500}
+ex_to_gex:    {want_cur: Greater Exalted Orb,       want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:6",    gold_fee: 360}
+ex_to_gregal: {want_cur: Greater Regal Orb,         want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:10",   gold_fee: 360}
+ex_to_gtrans: {want_cur: Greater Orb of Transmutation, want_qty: 3, give_cur: Exalted Orb, give_qty: 1, market_ratio: "3:1", gold_fee: 450}
+ex_to_paug:   {want_cur: Perfect Orb of Augmentation, want_qty: 1, give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:30",  gold_fee: 180}
+ex_to_pc:     {want_cur: Perfect Chaos Orb,         want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:3975", gold_fee: 1500}
+ex_to_pex:    {want_cur: Perfect Exalted Orb,       want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:1250", gold_fee: 1000}
+ex_to_pregal: {want_cur: Perfect Regal Orb,         want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:300",  gold_fee: 1000}
+ex_to_ptrans: {want_cur: Perfect Orb of Transmutation, want_qty: 1, give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:15", gold_fee: 450}
+ex_to_regal:  {want_cur: Regal Orb,                 want_qty: 40, give_cur: Exalted Orb, give_qty: 1, market_ratio: "40:1",  gold_fee: 4800}
+ex_to_trans:  {want_cur: Orb of Transmutation,      want_qty: 2,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "2:1",   gold_fee: 100}
+ex_to_d:      {want_cur: Divine Orb,                want_qty: 1,  give_cur: Exalted Orb, give_qty: 1, market_ratio: "1:570",  gold_fee: 800}
+# Trades view: tables instead of quantities/fee.
+example_pricing:
+  want_cur: Hinekora's Lock
+  give_cur: Divine Orb
+  market_ratio: "1:2100"
+  available:   # [want, have, stock, aggregate]
+    - [1, 2100, 1, null]
+    - [1, 2200, 6, null]
+    - [1, 2295, 1, null]
+    - [1, 2296, 1, null]
+    - [1, 2297, 1, null]
+    - [1, 2297, 25, "<"]
+  competing:
+    - [1, 1981, 1981, null]
+    - [1, 1980, 1980, null]
+    - [1, 1974, 1974, null]
+    - [1, 1973, 1973, null]
+    - [1, 1900, 1900, null]
+    - [1, 1900, 46968, ">"]
+currency_exchange_window:  # whole window, trades view
+  want_cur: Hinekora's Lock
+  give_cur: Divine Orb
+  market_ratio: "1:2199"
+  available:
+    - [1, 2199, 1, null]
+    - [1, 2200, 1, null]
+    - [1, 2294, 1, null]
+    - [1, 2295, 1, null]
+    - [1, 2296, 1, null]
+    - [1, 2296, 27, "<"]
+  competing:
+    - [1, 1878, 1878, null]
+    - [1, 1877, 1877, null]
+    - [1, 1850, 1850, null]
+    - [1, 1843, 1843, null]
+    - [1, 1830, 1830, null]
+    - [1, 1830, 36692, ">"]
+too_few_available_trades:  # only 2 available trades: blank slots, no "<" summary row
+  want_cur: Omen of Whittling
+  give_cur: Exalted Orb
+  market_ratio: "1:8989"
+  available:
+    - [1, 8989, 1, null]
+    - [1, 8990, 1, null]
+  competing:
+    - [1, 2550, 2550, null]
+    - [1, 2500, 2500, null]
+    - [1, 1600, 3200, null]
+    - [1, 1575, 1575, null]
+    - [1, 1, 184, null]
+    - [1, 1, 1, ">"]
+no_available_trades:  # nobody offers it: the Competing pane moves up into the first pane's place
+  want_cur: Hinekora's Lock
+  give_cur: Exalted Orb
+  market_ratio: null
+  available: []
+  competing:
+    - [1, 10000, 10000, null]
+    - [1, 3780, 3780, null]
+    - [1, 3000, 3000, null]
+    - [1, 2500, 2500, null]
+    - [1, 2000, 2000, null]
+    - [1, 2000, 11522, ">"]
+really_long_ratio:  # "1 : 3400.50" wraps onto two lines in the first row
+  want_cur: Preserved Cranium
+  give_cur: Exalted Orb
+  market_ratio: "1:3400.5"
+  available:
+    - [1, 3400.5, 2, null]
+    - [1, 3780, 2, null]
+    - [1, 5800, 2, null]
+    - [1, 5900, 5, null]
+  competing:
+    - [1, 1750, 1750, null]
+    - [1, 1500, 10500, null]
+    - [1, 92, 920, null]
+    - [1, 90, 1170, null]
+    - [1, 80, 480, null]
+    - [1, 80, 370, ">"]
+decimal_ratios:  # decimals (6.50, 7.14, 5.35): faint points are easily dropped by OCR
+  want_cur: Perfect Chaos Orb
+  give_cur: Divine Orb
+  market_ratio: "1:6.5"
+  available:
+    - [1, 6.5, 1954, null]
+    - [1, 6.67, 3, null]
+    - [1, 6.7, 20, null]
+    - [1, 7, 1246, null]
+    - [1, 7.14, 7, null]
+    - [1, 7.14, 2479, "<"]
+  competing:
+    - [1, 6, 8682, null]
+    - [1, 5.35, 107, null]
+    - [1, 5.2, 520, null]
+    - [1, 4.25, 34, null]
+    - [1, 4, 8008, null]
+    - [1, 4, 620, ">"]

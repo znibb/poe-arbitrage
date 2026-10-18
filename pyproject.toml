@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poearb"
+version = "0.1.0"
+description = "Read-only screen scanner for PoE2 currency exchange arbitrage"
+requires-python = ">=3.11"
+dependencies = [
+    "pillow",
+    "opencv-python-headless",
+    "numpy",
+    "pytesseract",
+    "rapidfuzz",
+    "pyyaml",
+    "rich",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+# Not needed if the system package (pacman -S pyside6) is visible to the venv.
+gui = ["PySide6"]
+
+[project.scripts]
+poearb = "poearb.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
